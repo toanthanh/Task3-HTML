@@ -25,6 +25,18 @@
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>
+    <script>
+        var p1 = document.querySelector('#test');
+        // console.log(p1);
+        var changeText = function() {
+            p1.innerHTML = 'Hello Forssa!!';
+            p1.style.color = 'red';
+            // instead of p1 you can use this
+            this.style.fontSize = '2em';
+        }
+
+        p1.addEventListener('click', changeText);
+    </script>
 </body>
 
 </html>
