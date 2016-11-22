@@ -21,8 +21,8 @@
 ### Task A 
 1. Open task_a.html in editor
 2. Make a form with the following input fields
-  * Name
-  * Familyname
+  * Firsname
+  * Lastname
   * Email
   * Phone number 
   * Address

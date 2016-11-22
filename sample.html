@@ -17,13 +17,26 @@
 
 <body>
     <main>
-        <p id="test">Select this element and modify it with JavaScriptillä</p>
+        <p id="test">Select this element and modify it with JavaScript</p>
         <p class="example">Lets try to select this...</p>
         <p class="example">...and this simultaneously.</p>
     </main>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+
+    <script>
+        var p1 = document.querySelector('#test');
+        // console.log(p1);
+        var changeText = function() {
+            p1.innerHTML = 'Hello Forssa!!';
+            p1.style.color = 'red';
+            // instead of p1 you can use this
+            this.style.fontSize = '2em';
+        }
+
+        p1.addEventListener('click', changeText);
     </script>
 </body>
 
