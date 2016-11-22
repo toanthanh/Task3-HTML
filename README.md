@@ -21,7 +21,7 @@
 ### Task A 
 1. Open task_a.html in editor
 2. Make a form with the following input fields
-  * Firsname
+  * Firstname
   * Lastname
   * Email
   * Phone number 
@@ -31,7 +31,7 @@
   * Submit-button
 3. Validate the HTML at http://validator.w3.org. Make the changes validator suggests.
 4. Implement form validation by using HTML5
-  * Name and familyname are required
+  * Firstname and lastname are required
   * Email has to be valid and it is required
   * Phone number format needs be +358401234567
   * Address and postal code are not required, but postal code needs to be exactly 5 numbers (if entered)
