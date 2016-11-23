@@ -34,8 +34,17 @@
             // instead of p1 you can use this
             this.style.fontSize = '2em';
         }
-
         p1.addEventListener('click', changeText);
+
+        var pElements = document.querySelectorAll('.example');
+
+        for (var i = 0; i < pElements.length; i++) {
+            pElements[i].addEventListener('click', function() {
+                alert(this.innerHTML);
+            });
+        }
+
+        console.log(pElements);
     </script>
 </body>
 

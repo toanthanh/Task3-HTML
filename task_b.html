@@ -18,8 +18,38 @@
 <body>
     <h1>Form validation JavaScript</h1>
 
-    <form>
-        <!-- your input elements here -->
+    <form novalidate>
+        <label>Firstname
+            <input type="text" name="firstname" required>
+        </label>
+        <br>
+        <label>Lastname
+            <input type="text" name="lastname" required>
+        </label>
+        <br>
+        <label>Email
+            <input type="email" name="email" required pattern="">
+        </label>
+        <br>
+        <label>Phone number
+            <input type="text" name="phone" required pattern="^\+[0-9-]{6,16}$">
+        </label>
+        <br>
+        <label>Address
+            <input type="text" name="address">
+        </label>
+        <br>
+        <label>Postal code
+            <input type="text" name="postal" pattern="^[0-9]{5}$">
+        </label>
+        <br>
+        <label>Password
+            <input type="password" required>
+        </label>
+        <br>
+        <input type="submit" value="Save data">
+        </label>
+        <br>
     </form>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
