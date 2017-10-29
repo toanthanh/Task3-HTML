@@ -2,10 +2,7 @@
 
 
 ## Get started
-  * Create/choose a folder where you want to save your work
-  * Open terminal/git bash
-  * Navigate to the folder where you want to save your work `cd folderName/folderName`
-  * Clone this repository `git clone https://github.com/ilkkamtk/BCW1.git`
+  * Save this repository as zip `git clone https://github.com/ilkkamtk/BCW1.git` and extract it 
 
 ## Selecting and manipulating elements + events
   * Open sample.html
@@ -50,13 +47,13 @@
 4. Implement form validation by using JavaScript
   * Validate the same properties as in task A
   * Hints:
-    * `var element = document.querySelector()`
-    * `var elements = document.querySelectorAll()`
+    * `const element = document.querySelector()`
+    * `const elements = document.querySelectorAll()`
     * `element.addEventListener('submit', functionName)`
     * `element.setAttribute('style', 'cssProperty: value')`
     * `elelment.cssProperty = value`
   * If the form is not valid, stop the submit event with `preventDefault()`
+  * Some help
+    * https://www.w3schools.com/jsref/jsref_regexp_exec.asp
+    * https://www.w3schools.com/jsref/jsref_obj_regexp.asp
     
-## Submitting
-1. Copy this folder (BCW1) to your server (/var/www/html) and submit a link to Tuubi.
-
