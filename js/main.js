@@ -1,41 +1,53 @@
-var form = document.querySelector('form');
+'use strict';
 
-var validateForm = function(evt) {
-    // Reset the border style of all inputs
-    var inputs = document.querySelectorAll('input');
-    for (var k = 0; k < inputs.length; k++) {
-        inputs[k].style.border = 'none';
+// ***** check for required fields ************
+// global variable to allow form submission
+let formOK = 0;
+
+// select all input elements
+const inputs = document.querySelectorAll('input');
+
+const checkAttribute = (elements, attr, func) => {
+  elements.forEach((element) => {
+    if (element.hasAttribute(attr)) {
+      func(element);
     }
+  });
+};
 
-    // evt.preventDefault();
-    // Select elements which have 'required' attribute
-    var rElements = document.querySelectorAll('input[required]');
-    // If the value of these inputs is empty
-    for (var i = 0; i < rElements.length; i++) {
-        if (rElements[i].value.length == 0) {
-            // Prevent submission
-            evt.preventDefault();
-            // Change the border color of invalid input to red
-            rElements[i].style.border = '1px solid red';
-            // end if
-        }
-    }
+const checkEmpty = (element) => {
+  if (element.value === '') {
+    formOK++;
+    // change border of element to red
+    element.setAttribute('style', 'border: red solid 1px');
+    // modern browsers:
+    // element.style = 'border: red solid 1px';
+  } else {
+    formOK--;
+    element.removeAttribute('style');
+  }
+};
 
-    // Select elements which have 'pattern' attribute.
-    var pElements = document.querySelectorAll('input[pattern]');
-    // If the value of these inputs don`t match
-    // the pattern attribute (  match() )
-    for (var j = 0; j < pElements.length; j++) {
-        var patt = pElements[j].pattern;
-        // console.log(pElements[j].value.match(patt));
-        if (pElements[j].value.match(patt) === null) {
-            // Prevent submission
-            evt.preventDefault();
-            // Change the border color of invalid input to orange
-            pElements[j].style.border = '1px solid orange';
-            // end if
-        }
-    }
-}
+const checkPattern = (element) => {
+  const pattern = new RegExp(element.getAttribute('pattern'), 'i');
+  const value = element.value;
+  if (!pattern.test(value)){
+    formOK++;
+    element.setAttribute('style', 'border: yellow solid 1px');
+  } else {
+    formOK--;
+    element.removeAttribute('style');
+  }
+};
 
-form.addEventListener('submit', validateForm);
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  formOK = 0;
+  checkAttribute(inputs, 'required', checkEmpty);
+  checkAttribute(inputs, 'pattern', checkPattern);
+  console.log(formOK);
+  if (formOK === -8)
+    form.submit();
+});

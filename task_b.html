@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Task B</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,48 +16,41 @@
 </head>
 
 <body>
-    <h1>Form validation JavaScript</h1>
+<h1>Form validation JavaScript</h1>
 
-    <form novalidate>
-        <label>Firstname
-            <input type="text" name="firstname" required>
-        </label>
-        <br>
-        <label>Lastname
-            <input type="text" name="lastname" required>
-        </label>
-        <br>
-        <label>Email
-            <input type="email" name="email" required pattern="">
-        </label>
-        <br>
-        <label>Phone number
-            <input type="text" name="phone" required pattern="^\+[0-9-]{6,16}$">
-        </label>
-        <br>
-        <label>Address
-            <input type="text" name="address">
-        </label>
-        <br>
-        <label>Postal code
-            <input type="text" name="postal" pattern="^[0-9]{5}$">
-        </label>
-        <br>
-        <label>Password
-            <input type="password" required>
-        </label>
-        <br>
-        <input type="submit" value="Save data">
-        </label>
-        <br>
-    </form>
+<form novalidate>
+    <label>Firstname
+        <input type="text" name="firstname" required>
+    </label>
+    <br>
+    <label>Lastname
+        <input type="text" name="lastname" required>
+    </label>
+    <br>
+    <label>Email
+        <input type="email" name="email" required pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$">
+    </label>
+    <br>
+    <label>Phone number
+        <input type="tel" name="phone" required pattern="^\+[0-9]{5,}$">
+    </label>
+    <br>
+    <label>Address
+        <input type="text" name="address">
+    </label>
+    <br>
+    <label>Postal code
+        <input type="text" name="postal" pattern="^[0-9]{5}$">
+    </label>
+    <br>
+    <label>Password
+        <input type="password" required>
+    </label>
+    <br>
+    <input type="submit" value="Save data">
+</form>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-    </script>
-
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
